@@ -1,0 +1,11 @@
+{
+  "namespace": "com.shortthirdman.bootlabs.eventsourcing.event",
+  "type": "record",
+  "name": "OrderAcceptedEvent",
+  "fields": [
+    {
+      "name": "base",
+      "type": "com.shortthirdman.bootlabs.eventsourcing.event.BaseEvent"
+    }
+  ]
+}

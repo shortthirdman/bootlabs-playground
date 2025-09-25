@@ -1,0 +1,15 @@
+{
+  "namespace": "com.shortthirdman.bootlabs.eventsourcing.event",
+  "type": "record",
+  "name": "OrderPickedUpEvent",
+  "fields": [
+    {
+      "name": "base",
+      "type": "com.shortthirdman.bootlabs.eventsourcing.event.BaseEvent"
+    },
+    {
+      "name": "driverId",
+      "type": "string"
+    }
+  ]
+}
