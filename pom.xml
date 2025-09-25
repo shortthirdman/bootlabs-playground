@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.shortthirdman.bootlabs</groupId>
+  <artifactId>bootlabs-playground</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>bootlabs-playground</name>
+  <description>BootLabs Playground</description>
+  <inceptionYear>2025</inceptionYear>
+  <url>https://github.com/shortthirdman/bootlabs-playground</url>
+
+  <organization>
+      <name>shortthirdman</name>
+      <url>https://github.com/shortthirdman-org</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>author</id>
+      <name>Swetank Mohanty</name>
+      <email>swetank.mohanty@outlook.com</email>
+      <organization>ShortThirdMan</organization>
+      <organizationUrl>https://github.com/shortthirdman-org</organizationUrl>
+      <roles>
+        <role>Product Owner</role>
+      </roles>
+      <timezone>UTC+04:00</timezone>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection/>
+    <developerConnection/>
+    <tag/>
+    <url/>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>LICENSE</url>
+      <distribution>https://www.example.com/license</distribution>
+    </license>
+  </licenses>
+
+  <properties>
+    <java.version>[17,25]</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.release>${java.version}</maven.compiler.release>
+  </properties>
+
+
+  <modules>
+    <module>projects/event-sourcing</module>
+    <module>projects/jwt-refresh-token</module>
+      <!--<module>projects/</module>
+        <module>projects/</module>
+        <module>projects/</module>
+        <module>projects/</module>-->
+  </modules>
+</project>
