@@ -121,3 +121,38 @@ To prevent this, the project POM contains empty overrides for these elements.
 If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
 
 ---
+
+## Author
+
+👤 **Swetank Mohanty**
+
+* Website: https://shortthirdman.medium.com/
+* Twitter: [@ShortThirdMan93](https://twitter.com/ShortThirdMan93)
+* Github: [@shortthirdman](https://github.com/shortthirdman)
+* LinkedIn: [@shortthirdman](https://linkedin.com/in/shortthirdman)
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/shortthirdman-org/Google-Colab-Notebooks/issues). 
+
+---
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+<a href="https://www.patreon.com/shortthirdman">
+  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a>
+
+---
+
+## 📝 License
+
+Copyright © 2025 [Swetank Mohanty](https://github.com/shortthirdman).<br />
+This project is [MIT](LICENSE) licensed.
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
