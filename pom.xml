@@ -37,11 +37,12 @@
   </scm>
 
   <licenses>
-    <license>
-      <name>MIT License</name>
-      <url>LICENSE</url>
-      <distribution>https://www.example.com/license</distribution>
-    </license>
+	<license>
+		<name>MIT License</name>
+		<url>https://opensource.org/license/mit/</url>
+		<distribution>repo</distribution>
+		<comments>MIT License</comments>
+	</license>
   </licenses>
 
   <properties>
@@ -49,15 +50,21 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.compiler.release>${java.version}</maven.compiler.release>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <jjwt.version>0.12.6</jjwt.version>
   </properties>
 
 
   <modules>
     <module>projects/event-sourcing</module>
     <module>projects/jwt-refresh-token</module>
-      <!--<module>projects/</module>
-        <module>projects/</module>
-        <module>projects/</module>
-        <module>projects/</module>-->
+    <module>projects/otp-authentication</module>
+	<module>projects/qrcode-generator</module>
+	<module>projects/chatclient-streaming</module>
+    <!--<module>projects/security-filterchain</module>
+		  <module>projects/</module>
+		  <module>projects/</module>
+		  <module>projects/</module>-->
   </modules>
 </project>

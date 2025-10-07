@@ -69,19 +69,22 @@ This repository is built around the Spring Boot ecosystem and includes a curated
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.4/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.4/maven-plugin/build-image.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.4.10/maven-plugin)
+* [Create an OCI image](https://docs.spring.io/spring-boot/3.4.10/maven-plugin/build-image.html)
 * [Spring Boot Testcontainers support](https://docs.spring.io/spring-boot/3.4.10/reference/testing/testcontainers.html#testing.testcontainers)
 * [Testcontainers Postgres Module Reference Guide](https://java.testcontainers.org/modules/databases/postgres/)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/3.4.4/reference/using/devtools.html)
-* [Spring Web](https://docs.spring.io/spring-boot/3.4.4/reference/web/servlet.html)
+* [Spring Boot DevTools](https://docs.spring.io/spring-boot/3.4.10/reference/using/devtools.html)
+* [Spring Web](https://docs.spring.io/spring-boot/3.4.10/reference/web/servlet.html)
 * [Spring Security](https://docs.spring.io/spring-boot/3.4.10/reference/web/spring-security.html)
 * [Spring Data JPA](https://docs.spring.io/spring-boot/3.4.10/reference/data/sql.html#data.sql.jpa-and-spring-data)
 * [Validation](https://docs.spring.io/spring-boot/3.4.10/reference/io/validation.html)
-* [JOOQ Access Layer](https://docs.spring.io/spring-boot/3.4.4/reference/data/sql.html#data.sql.jooq)
-* [Liquibase Migration](https://docs.spring.io/spring-boot/3.4.4/how-to/data-initialization.html#howto.data-initialization.migration-tool.liquibase)
-* [Spring for Apache Kafka](https://docs.spring.io/spring-boot/3.4.4/reference/messaging/kafka.html)
-* [Spring Boot Actuator](https://docs.spring.io/spring-boot/3.4.4/reference/actuator/index.html)
+* [JOOQ Access Layer](https://docs.spring.io/spring-boot/3.4.10/reference/data/sql.html#data.sql.jooq)
+* [Liquibase Migration](https://docs.spring.io/spring-boot/3.4.10/how-to/data-initialization.html#howto.data-initialization.migration-tool.liquibase)
+* [Spring for Apache Kafka](https://docs.spring.io/spring-boot/3.4.10/reference/messaging/kafka.html)
+* [Spring Boot Actuator](https://docs.spring.io/spring-boot/3.4.10/reference/actuator/index.html)
+* [Spring Reactive Web](https://docs.spring.io/spring-boot/3.4.10/reference/web/reactive.html)
+* [Java Mail Sender](https://docs.spring.io/spring-boot/3.4.10/reference/io/email.html)
+* [Quartz Scheduler](https://docs.spring.io/spring-boot/3.4.10/reference/io/quartz.html)
 * [Testcontainers](https://java.testcontainers.org/)
 
 ---
@@ -90,6 +93,7 @@ For further reference, please consider the following sections:
 The following guides illustrate how to use some features concretely:
 
 * [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Building a Reactive RESTful Web Service](https://spring.io/guides/gs/reactive-rest-service/)
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
 * [Securing a Web Application](https://spring.io/guides/gs/securing-web/)
