@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: asgardeo-authflow
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://api.asgardeo.io/t/{your_org_name}/oauth2/token
+          jwk-set-uri: https://api.asgardeo.io/t/{your_org_name}/oauth2/jwks
+      client:
+        registration:
+          asgardeo:
+            client-id: ${CLIENT_ID}
+            client-secret: ${CLIENT_SECRET}
+            scope: openid,email,profile
+            redirect-uri: http://localhost:8080/login/oauth2/code/asgardeo
+            authorization-grant-type: authorization_code
+            client-name: Asgardeo
+        provider:
+          asgardeo:
+            issuer-uri: https://api.asgardeo.io/t/{your_org_name}/oauth2/token
+            jwk-set-uri: https://api.asgardeo.io/t/{your_org_name}/oauth2/jwks
+
+server:
+  port: 8080
