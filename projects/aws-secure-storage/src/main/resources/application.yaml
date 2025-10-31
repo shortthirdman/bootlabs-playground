@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: aws-secure-storage
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+      file-size-threshold: 20KB
+
+server:
+  port: 8080
+  servlet:
+    context-path: /bootlabs/aws/s3
+    compression:
+      enabled: true
+      mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+      min-response-size: 1024
+    encoding:
+      enabled: true
+
+bootlabs:
+  amazon:
+    s3:
+      bucket-name: bootlabs-project-bucket
