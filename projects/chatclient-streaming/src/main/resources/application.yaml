@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: springai-chatclient-streams
+  ai:
+    openai:
+      api-key: ${env.OPENAI_API_KEY}

@@ -1,0 +1,26 @@
+{
+  "namespace": "com.shortthirdman.bootlabs.eventsourcing.event",
+  "type": "record",
+  "name": "BaseEvent",
+  "fields": [
+    {
+      "name": "eventId",
+      "type": "string"
+    },
+    {
+      "name": "aggregateId",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "eventType",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "namespace": "com.shortthirdman.bootlabs.eventsourcing.event",
+  "type": "record",
+  "name": "OrderCreatedEvent",
+  "fields": [
+    {
+      "name": "base",
+      "type": "com.shortthirdman.bootlabs.eventsourcing.event.BaseEvent"
+    },
+    {
+      "name": "customerId",
+      "type": "string"
+    },
+    {
+      "name": "restaurantId",
+      "type": "string"
+    },
+    {
+      "name": "deliveryAddress",
+      "type": "string"
+    },
+    {
+      "name": "deliveryNotes",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    }
+  ]
+}

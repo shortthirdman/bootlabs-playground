@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: user-activity-report-batch
+  namespace: demo
+spec:
+  schedule: "0 2 * * *"
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 10
+  failedJobsHistoryLimit: 10
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: 7200
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: user-activity-report
+              image: demo-app:latest
+              imagePullPolicy: Always
+              args: [ "--batchName=UserActivityReportBatch", "--batchParams=reportId=xyz" ]
+              env:
+                - name: SPRING_PROFILES_ACTIVE
+                  value: "prod"
+                - name: JAVA_TOOL_OPTIONS
+                  value: "'-XX:MaxRAMPercentage=90.0'"

@@ -1,0 +1,32 @@
+{
+  "namespace": "com.shortthirdman.bootlabs.eventsourcing.event",
+  "type": "record",
+  "name": "OrderItemAddedEvent",
+  "fields": [
+    {
+      "name": "base",
+      "type": "com.shortthirdman.bootlabs.eventsourcing.event.BaseEvent"
+    },
+    {
+      "name": "itemId",
+      "type": "string"
+    },
+    {
+      "name": "itemName",
+      "type": "string"
+    },
+    {
+      "name": "quantity",
+      "type": "int"
+    },
+    {
+      "name": "price",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 10,
+        "scale": 2
+      }
+    }
+  ]
+}

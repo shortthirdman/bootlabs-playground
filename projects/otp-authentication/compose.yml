@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+    otp-auth-app:
+        container_name: otp-auth-app
+        image: otp-auth-app:latest
+        ports:
+            - "8080:8080"
+        restart: on-failure
+        env:
+            - TWILIO_ACCOUNT_SID=
+            - TWILIO_AUTH_TOKEN=
+            - TWILIO_REGION=
+            - TWILIO_EDGE=

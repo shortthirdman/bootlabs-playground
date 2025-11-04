@@ -1,0 +1,18 @@
+{
+  "namespace": "com.shortthirdman.bootlabs.eventsourcing.event",
+  "type": "record",
+  "name": "OrderDeliveredEvent",
+  "fields": [
+    {
+      "name": "base",
+      "type": "com.shortthirdman.bootlabs.eventsourcing.event.BaseEvent"
+    },
+    {
+      "name": "deliveryTime",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    }
+  ]
+}

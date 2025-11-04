@@ -1,0 +1,174 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.shortthirdman.bootlabs</groupId>
+  <artifactId>bootlabs-playground</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>bootlabs-playground</name>
+  <description>BootLabs Playground</description>
+  <inceptionYear>2025</inceptionYear>
+  <url>https://github.com/shortthirdman/bootlabs-playground</url>
+
+  <organization>
+      <name>shortthirdman</name>
+      <url>https://github.com/shortthirdman-org</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>author</id>
+      <name>Swetank Mohanty</name>
+      <email>swetank.mohanty@outlook.com</email>
+      <organization>ShortThirdMan</organization>
+      <organizationUrl>https://github.com/shortthirdman-org</organizationUrl>
+      <roles>
+        <role>Product Owner</role>
+      </roles>
+      <timezone>UTC+04:00</timezone>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection/>
+    <developerConnection/>
+    <tag/>
+    <url/>
+  </scm>
+
+  <licenses>
+	<license>
+		<name>MIT License</name>
+		<url>https://opensource.org/license/mit/</url>
+		<distribution>repo</distribution>
+		<comments>MIT License</comments>
+	</license>
+  </licenses>
+
+  <properties>
+    <java.version>17</java.version>
+
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.release>${java.version}</maven.compiler.release>
+
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <spring-boot.version>3.4.10</spring-boot.version>
+    <spring-cloud.version>2024.0.2</spring-cloud.version>
+    <springdoc.version>2.8.10</springdoc.version>
+    <jjwt.version>0.12.6</jjwt.version>
+	<zxing.version>3.4.1</zxing.version>
+	<testcontainers.version>1.21.3</testcontainers.version>
+  </properties>
+
+  <dependencyManagement>
+     <dependencies>
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-dependencies</artifactId>
+             <version>${spring-boot.version}</version>
+             <type>pom</type>
+             <scope>import</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.springframework.cloud</groupId>
+             <artifactId>spring-cloud-dependencies</artifactId>
+             <version>${spring-cloud.version}</version>
+             <type>pom</type>
+             <scope>import</scope>
+         </dependency>
+         <dependency>
+             <groupId>io.projectreactor</groupId>
+             <artifactId>reactor-bom</artifactId>
+             <version>2024.0.10</version>
+             <type>pom</type>
+             <scope>import</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.testcontainers</groupId>
+             <artifactId>testcontainers-bom</artifactId>
+             <version>${testcontainers.version}</version>
+             <type>pom</type>
+             <scope>import</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.springdoc</groupId>
+             <artifactId>springdoc-openapi-bom</artifactId>
+             <version>${springdoc.version}</version>
+             <type>pom</type>
+             <scope>import</scope>
+         </dependency>
+     </dependencies>
+  </dependencyManagement>
+
+
+  <modules>
+    <module>projects/event-sourcing</module>
+    <module>projects/jwt-refresh-token</module>
+    <module>projects/otp-authentication</module>
+	<module>projects/qrcode-generator</module>
+	<module>projects/chatclient-streaming</module>
+    <!--<module>projects/security-filterchain</module>
+		  <module>projects/</module>
+		  <module>projects/</module>
+		  <module>projects/</module>-->
+  </modules>
+
+  <build>
+      <pluginManagement>
+          <plugins>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-enforcer-plugin</artifactId>
+                  <executions>
+                      <execution>
+                          <id>enforce-project-rules</id>
+                          <goals>
+                              <goal>enforce</goal>
+                          </goals>
+                          <configuration>
+                              <rules>
+                                  <requireJavaVersion>
+                                      <version>[${java.version},25]</version>
+                                  </requireJavaVersion>
+                                  <requireMavenVersion>
+                                      <version>[${maven.version},25]</version>
+                                  </requireMavenVersion>
+                                  <requirePluginVersions>
+                                      <banLatest>true</banLatest>
+                                      <banRelease>true</banRelease>
+                                      <banSnapshots>true</banSnapshots>
+                                      <phases>clean,package,install</phases>
+                                      <message>[ERROR] Best Practice is to always define plugin versions!</message>
+                                  </requirePluginVersions>
+                              </rules>
+                              <fail>true</fail>
+                              <failFast>true</failFast>
+                          </configuration>
+                      </execution>
+                  </executions>
+              </plugin>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-jar-plugin</artifactId>
+                  <configuration>
+                      <detectMultiReleaseJar>true</detectMultiReleaseJar>
+                      <archive>
+                          <manifest>
+                              <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                          </manifest>
+                          <manifestEntries>
+                              <Specification-Title>${project.name}</Specification-Title>
+                              <Specification-Version>${project.version}</Specification-Version>
+                              <Specification-Vendor>${project.organization.name}</Specification-Vendor>
+                              <Implementation-Vendor>ShortThirdMan</Implementation-Vendor>
+                          </manifestEntries>
+                      </archive>
+                  </configuration>
+              </plugin>
+          </plugins>
+      </pluginManagement>
+  </build>
+</project>
