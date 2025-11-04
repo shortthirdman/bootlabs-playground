@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: qrcode-generator
+server:
+  address: localhost
+  port: 8080
+  servlet:
+    context-path: /qrcode-generator
+  compression:
+    mime-types: '*/*'
+    enabled: true
+  forward-headers-strategy: framework
+
+logging:
+  charset:
+    console: utf-8
+  level:
+    root: info
+    org.springframework.web: debug
+    org.springframework.boot: debug
