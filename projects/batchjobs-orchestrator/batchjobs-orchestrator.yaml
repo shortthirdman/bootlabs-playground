@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: batchjobs-orchestrator
+  name: batchjobs-orchestrator
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: batchjobs-orchestrator
+  strategy: { }
+  template:
+    metadata:
+      labels:
+        app: batchjobs-orchestrator
+    spec:
+      containers:
+        - image: batchjobs-orchestrator:latest
+          name: demo-service
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8080
+            initialDelaySeconds: 90
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8080
+            initialDelaySeconds: 90
+          lifecycle:
+            preStop:
+              exec:
+                command: [ "sh", "-c", "sleep 10" ]
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "prod"
+            - name: JAVA_TOOL_OPTIONS
+              value: "'-XX:MaxRAMPercentage=90.0'"
+status: { }
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: batchjobs-orchestrator
+    monitor: monitored
+  namespace: demo
+  name: batchjobs-orchestrator
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: batchjobs-orchestrator
+  type: ClusterIP

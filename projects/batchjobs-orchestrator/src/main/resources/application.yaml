@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: batchjobs-orchestrator
+
+
+prometheus:
+  pushgateway:
+    url: pushgateway.internal.xxxxxxxx.com
